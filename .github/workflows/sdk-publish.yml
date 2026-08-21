@@ -13,15 +13,15 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Set version
-        run: mvn -B -q versions:set -DnewVersion=2.0.0 -DgenerateBackupPoms=false
+        run: mvn -B -q versions:set -DnewVersion=3.0.3 -DgenerateBackupPoms=false
       - name: Package
         run: |
           mvn -B -q package -DskipTests
-          cp "$(ls target/*.jar | grep -v sources.jar | grep -v javadoc.jar | head -n1)" sdk-2.0.0.jar
+          cp "$(ls target/*.jar | grep -v sources.jar | grep -v javadoc.jar | head -n1)" sdk-3.0.3.jar
       - uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
       - uses: google-github-actions/upload-cloud-storage@v2
         with:
-          path: sdk-2.0.0.jar
-          destination: forgecatalog/sdk/Task Manager/2.0.0
+          path: sdk-3.0.3.jar
+          destination: forgecatalog/sdk/3.0.3
