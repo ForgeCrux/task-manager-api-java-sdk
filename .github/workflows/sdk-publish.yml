@@ -3,6 +3,13 @@ on:
   push:
     paths:
       - '.github/workflows/sdk-publish.yml'
+concurrency:
+  group: sdk-publish-${{ github.repository }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+  id-token: write
+  actions: write
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -20,8 +27,45 @@ jobs:
           cp "$(ls target/*.jar | grep -v sources.jar | grep -v javadoc.jar | head -n1)" sdk-3.0.3.jar
       - uses: google-github-actions/auth@v2
         with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          workload_identity_provider: projects/861433193200/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+          service_account: github-actions-forgecrux@probestack-prod.iam.gserviceaccount.com
+          token_format: access_token
       - uses: google-github-actions/upload-cloud-storage@v2
         with:
           path: sdk-3.0.3.jar
-          destination: forgecatalog/sdk/3.0.3
+          destination: forgestudio/sdks/3.0.3
+      - name: Print Published Package Banner
+        run: |
+          echo ""
+          echo "================================================================"
+          echo "  SDK published: sdk-3.0.3.jar"
+          echo "----------------------------------------------------------------"
+          echo "  Package URL : gs://forgestudio/sdks/3.0.3/sdk-3.0.3.jar"
+          echo "================================================================"
+          echo ""
+      - name: Write Published Package to Step Summary
+        run: |
+          {
+            echo "## SDK published"
+            echo ""
+            echo "| | |"
+            echo "| --- | --- |"
+            echo "| **Package** | [\`sdk-3.0.3.jar\`](gs://forgestudio/sdks/3.0.3/sdk-3.0.3.jar) |"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Save Published Package as Artifact File
+        run: |
+          cat > "${{ github.workspace }}/.publish-info.json" <<EOF
+          {
+            "package": "sdk-3.0.3.jar",
+            "url": "gs://forgestudio/sdks/3.0.3/sdk-3.0.3.jar",
+            "sha": "${{ github.sha }}",
+            "publishedAt": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          }
+          EOF
+      - name: Upload Published Package Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-info
+          path: ${{ github.workspace }}/.publish-info.json
+          if-no-files-found: ignore
+        continue-on-error: true
