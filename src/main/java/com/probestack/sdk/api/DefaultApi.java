@@ -30,7 +30,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T08:23:40.527625415Z[GMT]", comments = "Generator version: 7.9.0")public class DefaultApi extends BaseApi {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-02T04:51:02.135816264Z[GMT]", comments = "Generator version: 7.9.0")public class DefaultApi extends BaseApi {
 
     public DefaultApi() {
         super(new ApiClient());
