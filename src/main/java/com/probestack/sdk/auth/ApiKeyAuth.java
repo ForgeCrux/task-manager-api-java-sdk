@@ -16,7 +16,7 @@ package com.probestack.sdk.auth;
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.MultiValueMap;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T08:23:40.527625415Z[GMT]", comments = "Generator version: 7.9.0")public class ApiKeyAuth implements Authentication {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-02T04:51:02.135816264Z[GMT]", comments = "Generator version: 7.9.0")public class ApiKeyAuth implements Authentication {
     private final String location;
     private final String paramName;
 
