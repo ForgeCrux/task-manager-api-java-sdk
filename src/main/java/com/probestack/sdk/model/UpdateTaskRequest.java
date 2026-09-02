@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   UpdateTaskRequest.JSON_PROPERTY_COMPLETED
 })
 @JsonTypeName("updateTask_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T08:23:40.527625415Z[GMT]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-02T04:51:02.135816264Z[GMT]", comments = "Generator version: 7.9.0")
 public class UpdateTaskRequest {
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;
