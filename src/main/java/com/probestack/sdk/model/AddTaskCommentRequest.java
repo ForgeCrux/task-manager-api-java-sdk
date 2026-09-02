@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   AddTaskCommentRequest.JSON_PROPERTY_TAGS
 })
 @JsonTypeName("addTaskComment_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T08:23:40.527625415Z[GMT]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-02T04:51:02.135816264Z[GMT]", comments = "Generator version: 7.9.0")
 public class AddTaskCommentRequest {
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
