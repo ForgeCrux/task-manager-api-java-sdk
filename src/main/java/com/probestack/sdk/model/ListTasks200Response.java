@@ -34,7 +34,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ListTasks200Response.JSON_PROPERTY_DATA
 })
 @JsonTypeName("listTasks_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-21T08:23:40.527625415Z[GMT]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-02T04:51:02.135816264Z[GMT]", comments = "Generator version: 7.9.0")
 public class ListTasks200Response {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<Task> data = new ArrayList<>();
