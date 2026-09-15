@@ -8,9 +8,9 @@ build.gradle
 build.sbt
 docs/AddTaskCommentRequest.md
 docs/CreateTaskRequest.md
-docs/DefaultApi.md
 docs/ListTasks200Response.md
 docs/Task.md
+docs/TasksApi.md
 docs/UpdateTaskRequest.md
 git_push.sh
 gradle.properties
@@ -27,7 +27,7 @@ src/main/java/com/probestack/sdk/JavaTimeFormatter.java
 src/main/java/com/probestack/sdk/RFC3339DateFormat.java
 src/main/java/com/probestack/sdk/ServerConfiguration.java
 src/main/java/com/probestack/sdk/ServerVariable.java
-src/main/java/com/probestack/sdk/api/DefaultApi.java
+src/main/java/com/probestack/sdk/api/TasksApi.java
 src/main/java/com/probestack/sdk/auth/ApiKeyAuth.java
 src/main/java/com/probestack/sdk/auth/Authentication.java
 src/main/java/com/probestack/sdk/auth/HttpBasicAuth.java
@@ -37,7 +37,7 @@ src/main/java/com/probestack/sdk/model/CreateTaskRequest.java
 src/main/java/com/probestack/sdk/model/ListTasks200Response.java
 src/main/java/com/probestack/sdk/model/Task.java
 src/main/java/com/probestack/sdk/model/UpdateTaskRequest.java
-src/test/java/com/probestack/sdk/api/DefaultApiTest.java
+src/test/java/com/probestack/sdk/api/TasksApiTest.java
 src/test/java/com/probestack/sdk/model/AddTaskCommentRequestTest.java
 src/test/java/com/probestack/sdk/model/CreateTaskRequestTest.java
 src/test/java/com/probestack/sdk/model/ListTasks200ResponseTest.java
