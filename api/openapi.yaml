@@ -3,7 +3,7 @@ info:
   description: "A simple task management API used to end-to-end test MCP generation\
     \ (spec parse, tools, mock server, contract testing, code analysis)."
   title: Task Manager API
-  version: 2.0.0
+  version: 2.0.1
 servers:
 - url: https://api.taskmanager.example.com/v2
 paths:
@@ -42,6 +42,8 @@ paths:
                 $ref: "#/components/schemas/listTasks_200_response"
           description: A list of tasks
       summary: List all tasks
+      tags:
+      - Tasks
       x-accepts:
       - application/json
     post:
@@ -62,6 +64,8 @@ paths:
                 $ref: "#/components/schemas/Task"
           description: Task created
       summary: Create a new task
+      tags:
+      - Tasks
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -82,6 +86,8 @@ paths:
         "204":
           description: Task deleted successfully
       summary: Delete a task
+      tags:
+      - Tasks
       x-accepts:
       - application/json
     get:
@@ -106,6 +112,8 @@ paths:
         "404":
           description: Task not found
       summary: Get a task by ID
+      tags:
+      - Tasks
       x-accepts:
       - application/json
     put:
@@ -135,6 +143,8 @@ paths:
                 $ref: "#/components/schemas/Task"
           description: Task updated
       summary: Update an existing task
+      tags:
+      - Tasks
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -162,6 +172,8 @@ paths:
         "201":
           description: Comment added
       summary: Add a comment to a task
+      tags:
+      - Tasks
       x-content-type: application/json
       x-accepts:
       - application/json
