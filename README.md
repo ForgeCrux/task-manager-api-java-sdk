@@ -2,9 +2,9 @@
 
 Task Manager API
 
-- API version: 2.0.0
+- API version: 2.0.1
 
-- Build date: 2026-09-02T04:51:02.135816264Z[GMT]
+- Build date: 2026-09-15T06:35:31.801788640Z[GMT]
 
 - Generator version: 7.9.0
 
@@ -44,7 +44,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>org.openapitools</groupId>
   <artifactId>openapi-java-client</artifactId>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -60,7 +60,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "org.openapitools:openapi-java-client:2.0.0"
+     implementation "org.openapitools:openapi-java-client:2.0.1"
   }
 ```
 
@@ -74,7 +74,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/openapi-java-client-2.0.0.jar`
+- `target/openapi-java-client-2.0.1.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -86,21 +86,21 @@ Please follow the [installation](#installation) instruction and execute the foll
 import com.probestack.sdk.*;
 import com.probestack.sdk.auth.*;
 import com.probestack.sdk.model.*;
-import com.probestack.sdk.api.DefaultApi;
+import com.probestack.sdk.api.TasksApi;
 
-public class DefaultApiExample {
+public class TasksApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.taskmanager.example.com/v2");
         
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
+        TasksApi apiInstance = new TasksApi(defaultClient);
         String taskId = "taskId_example"; // String | Unique ID of the task
         AddTaskCommentRequest addTaskCommentRequest = new AddTaskCommentRequest(); // AddTaskCommentRequest | 
         try {
             apiInstance.addTaskComment(taskId, addTaskCommentRequest);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#addTaskComment");
+            System.err.println("Exception when calling TasksApi#addTaskComment");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -117,12 +117,12 @@ All URIs are relative to *https://api.taskmanager.example.com/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**addTaskComment**](docs/DefaultApi.md#addTaskComment) | **POST** /tasks/{taskId}/comments | Add a comment to a task
-*DefaultApi* | [**createTask**](docs/DefaultApi.md#createTask) | **POST** /tasks | Create a new task
-*DefaultApi* | [**deleteTask**](docs/DefaultApi.md#deleteTask) | **DELETE** /tasks/{taskId} | Delete a task
-*DefaultApi* | [**getTaskById**](docs/DefaultApi.md#getTaskById) | **GET** /tasks/{taskId} | Get a task by ID
-*DefaultApi* | [**listTasks**](docs/DefaultApi.md#listTasks) | **GET** /tasks | List all tasks
-*DefaultApi* | [**updateTask**](docs/DefaultApi.md#updateTask) | **PUT** /tasks/{taskId} | Update an existing task
+*TasksApi* | [**addTaskComment**](docs/TasksApi.md#addTaskComment) | **POST** /tasks/{taskId}/comments | Add a comment to a task
+*TasksApi* | [**createTask**](docs/TasksApi.md#createTask) | **POST** /tasks | Create a new task
+*TasksApi* | [**deleteTask**](docs/TasksApi.md#deleteTask) | **DELETE** /tasks/{taskId} | Delete a task
+*TasksApi* | [**getTaskById**](docs/TasksApi.md#getTaskById) | **GET** /tasks/{taskId} | Get a task by ID
+*TasksApi* | [**listTasks**](docs/TasksApi.md#listTasks) | **GET** /tasks | List all tasks
+*TasksApi* | [**updateTask**](docs/TasksApi.md#updateTask) | **PUT** /tasks/{taskId} | Update an existing task
 
 
 ## Documentation for Models
